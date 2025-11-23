@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tik-Tak-Toe</title>
+</head>
+<body class="theme-light">
+    <div class="container">
+        <div id="menu-screen">
+            <button class="settings-btn" onclick="toggleSettings()">⚙️</button>
+            <h1>Tik-Tak-Toe</h1>
+            <p class="subtitle">Ən yaxşı strateji oyun!</p>
+            <div class="settings-panel" id="settings-panel">
+                <div class="setting-group">
+                    <label class="setting-label">🎨 Tema:</label>
+                    <div class="btn-group">
+                        <button class="option-btn active" onclick="changeTheme('light', this)">☀️ İşıqlı</button>
+                        <button class="option-btn" onclick="changeTheme('dark', this)">🌙 Qaranlıq</button>
+                        <button class="option-btn" onclick="changeTheme('neon', this)">✨ Neon</button>
+                        <button class="option-btn" onclick="changeTheme('ocean', this)">🌊 Okean</button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">🎭 Dizayn stili:</label>
+                    <div class="btn-group">
+                        <button class="option-btn active" onclick="changeStyle('classic', this)">X/O Klassik</button>
+                        <button class="option-btn" onclick="changeStyle('firewater', this)">🔥💧 Atəş və Su</button>
+                        <button class="option-btn" onclick="changeStyle('nature', this)">🌿🌳 Təbiət</button>
+                        <button class="option-btn" onclick="changeStyle('candy', this)">🍭🍬 Şirniyyat</button>
+                        <button class="option-btn" onclick="changeStyle('tech', this)">⚡💎 Texnoloji</button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">🎯 Birinci oyunçu:</label>
+                    <div class="btn-group">
+                        <button class="option-btn active" onclick="changePlayer('X', this)">X ilə başla</button>
+                        <button class="option-btn" onclick="changePlayer('O', this)">O ilə başla</button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label class="setting-label">⚡ Çətinlik:</label>
+                    <div class="btn-group three-col">
+                        <button class="option-btn" onclick="changeDifficulty('easy', this)">😊 Asan</button>
+                        <button class="option-btn active" onclick="changeDifficulty('medium', this)">😐 Orta</button>
+                        <button class="option-btn" onclick="changeDifficulty('hard', this)">😤 Çətin</button>
+                    </div>
+                </div>
+            </div>
+            <button class="game-btn btn-computer" onclick="startGame('computer')">🤖 Kompüterlə oyna</button>
+            <button class="game-btn btn-friend" onclick="startGame('friend')">👥 Dostla oyna</button>
+        </div>
+        <div id="game-screen" class="hidden">
+            <div class="game-header">
+                <h1 style="font-size: 2rem; margin: 0;">Tik-Tak-Toe</h1>
+                <button class="back-btn" onclick="backToMenu()">Ana Menyu</button>
+            </div>
+            <div class="scores">
+                <div id="score-x">X: 0</div>
+                <div style="color: #9e9e9e;">Heç-heçə: <span id="score-draw">0</span></div>
+                <div id="score-o">O: 0</div>
+            </div>
+            <div class="status" id="status">Növbə: X</div>
+            <div class="board" id="board"></div>
+            <button class="new-game-btn" onclick="newGame()">
+                <span style="font-size: 1.5rem;">↻</span> Yeni oyun
+            </button>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+   
+</body>
+</html>
